@@ -25,6 +25,7 @@ function App() {
     reset: true,
     loop: 2,
     reverse: flip,
+    cancel: deal,
     from: { scale: 1, color: "black", backgroundColor: "#faf7e6" },
     to: { scale: 1.1, color: "#faf7e6", backgroundColor: "black" },
     config: config.molasses,
@@ -43,7 +44,11 @@ function App() {
                 index={4}
                 degs={"-7deg"}
                 rotate={360}
-                x={-screenWidth / 2 + 150}
+                x={
+                  screenWidth > 450
+                    ? -screenWidth / 2 + 150
+                    : -screenWidth / 2 + 80
+                }
                 y={-screenHeight / 2 + 200}
                 delay={0}
                 deal={deal}
@@ -56,7 +61,11 @@ function App() {
                 index={3}
                 degs={"5deg"}
                 rotate={360}
-                x={screenWidth / 2 - 150}
+                x={
+                  screenWidth > 450
+                    ? screenWidth / 2 - 150
+                    : screenWidth / 2 - 80
+                }
                 y={-screenHeight / 2 + 200}
                 delay={500}
                 deal={deal}
@@ -68,7 +77,11 @@ function App() {
                 index={2}
                 degs={"-5deg"}
                 rotate={360}
-                x={screenWidth / 2 - 150}
+                x={
+                  screenWidth > 450
+                    ? screenWidth / 2 - 150
+                    : screenWidth / 2 - 80
+                }
                 y={screenHeight / 2 - 200}
                 delay={1000}
                 deal={deal}
@@ -79,7 +92,11 @@ function App() {
                 index={1}
                 degs={"0deg"}
                 rotate={360}
-                x={-screenWidth / 2 + 150}
+                x={
+                  screenWidth > 450
+                    ? -screenWidth / 2 + 150
+                    : -screenWidth / 2 + 80
+                }
                 y={screenHeight / 2 - 200}
                 delay={1500}
                 deal={deal}

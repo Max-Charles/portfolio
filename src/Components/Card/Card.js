@@ -3,10 +3,12 @@ import { useSpring, animated as a, config } from "react-spring";
 import "./Card.scss";
 import { useState, useEffect } from "react";
 import Journey from "../Journey/Journey";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import Stack from "../Stack/Stack";
 
 const calc = (x, y) => [
-  (y - window.innerHeight / 2) / 20,
-  (x - window.innerWidth / 2) / 20,
+  (y - window.innerHeight / 2) / 50,
+  (x - window.innerWidth / 2) / 50,
   1,
 ];
 const trans = (x, y, s) =>
@@ -17,9 +19,10 @@ function Card(props) {
   const [style, setStyle] = useState({});
   const [hovered, setHovered] = useState(false);
 
+  const { screenWidth, screenHeight } = useWindowDimensions();
+
   const [morph, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    // zIndex: 1000,
     config: config.default,
   }));
 
@@ -53,21 +56,39 @@ function Card(props) {
     to: isFlipped
       ? [
           {
+            zIndex: isFlipped ? 1000 : props.index,
             transform: `perspective(500px) rotateY(${isFlipped ? 180 : 0}deg)`,
             scale: isFlipped ? 2.4 : 1,
             x: isFlipped ? 0 : props.x,
             y: isFlipped ? 0 : props.y,
             rotateZ: isFlipped ? 360 : 0,
-
             config: config.molasses,
           },
           {
-            width: isFlipped ? window.innerWidth / 4 : 150,
+            width: isFlipped
+              ? (screenWidth / 2) * 0.7
+              : screenWidth < 450
+              ? 120
+              : 150,
+            height: isFlipped
+              ? (screenHeight / 2) * 0.7
+              : screenWidth < 450
+              ? 180
+              : 221,
           },
         ]
       : [
           {
-            width: isFlipped ? window.innerWidth / 4 : 150,
+            width: isFlipped
+              ? (screenWidth / 2) * 0.7
+              : screenWidth < 450
+              ? 120
+              : 150,
+            height: isFlipped
+              ? (screenHeight / 2) * 0.7
+              : screenWidth < 450
+              ? 180
+              : 221,
           },
           {
             transform: `perspective(500px) rotateY(${isFlipped ? 180 : 0}deg)`,
@@ -88,23 +109,14 @@ function Card(props) {
   const handleCards = () => {
     setStyle({ ...flipCards });
     setIsFlipped(!isFlipped);
-
-    // console.log(isFlipped);
   };
-
-  //   const [hovered, setHovered] = useState(false);
-
-  //   const handleHover = () => {
-  //     setHovered(!hovered);
-  //   };
-
-  //   const hoverAnimation = useSpring({
-  //     scale: hovered ? 1.1 : 1,
-  //   });
 
   const renderChild = (input) => {
     if (input === "About") {
-      return <Journey isFlipped={props.isFlipped} />;
+      return <Journey isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
+    }
+    if (input === "Stack") {
+      return <Stack isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
     }
   };
 
@@ -112,9 +124,10 @@ function Card(props) {
     <a.div
       className="card"
       style={{
-        // ...hoverAnimation,
         ...style,
-        zIndex: isFlipped || hovered ? 1000 : props.index,
+        // width: screenWidth < 450 ? screenWidth / 4 : 150,
+        // height: screenWidth < 450 ? ((screenWidth / 4) * 22) / 15 : 220,
+
         rotate: deal ? 0 : props.degs,
         backgroundColor: isFlipped ? "#faf7e6" : "none",
         backgroundImage: isFlipped ? "none" : `url(${props.image})`,

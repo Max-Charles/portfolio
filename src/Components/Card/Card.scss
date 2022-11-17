@@ -1,6 +1,6 @@
 .card {
     width: 15rem;
-    height: 22rem;
+    height: 22.1rem;
     color: black;
     position: absolute;
     display: flex;
@@ -10,7 +10,7 @@
     border: 4px solid silver;
     border-radius: 15px;
     background-size: contain;
-    padding: 5px;
+
     
     // &:hover {
         //     transition: ease-in 500ms;
@@ -22,6 +22,7 @@
         // overflow-y: none;
         // overflow: hidden;
         color: black;
+        width: 100%;
     }
 
 }
