@@ -1,0 +1,98 @@
+@use "./Partials/breakpoints" as *;
+
+html {
+  font-size: 62.5%;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+ h1 {
+   font-size: 2.2rem;
+   font-weight: 900;
+   letter-spacing: 0.5px;
+
+ }
+
+ h2 {
+   font-size: 2.2rem;
+   font-weight: 900;
+   letter-spacing: 0.5px;
+
+ }
+
+ h3 {
+   font-size: 2rem;
+   font-weight: 700;
+   letter-spacing: 0.5px;
+
+ }
+
+ h4 {
+   font-size: 1.6rem;
+   font-weight: 500;
+   letter-spacing: 0.5px;
+
+ }
+
+ p {
+   font-size: 1rem;
+
+   letter-spacing: 0.5px;
+   font-weight: 400;
+ }
+
+ @include mobile {
+
+  h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+    }
+  
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+
+    }
+  
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+
+    }
+  
+    p {
+      font-size: 0.6rem;
+    }
+ }
+

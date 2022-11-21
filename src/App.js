@@ -40,21 +40,37 @@ function App() {
           <div className="card-container__inner-inner">
             <div className="card-container__inner-inner-inner">
               <Card
-                title={"Stack"}
-                index={4}
-                degs={"-7deg"}
+                title={"Contact"}
+                index={1}
+                degs={"0deg"}
                 rotate={360}
                 x={
                   screenWidth > 450
                     ? -screenWidth / 2 + 150
                     : -screenWidth / 2 + 80
                 }
-                y={-screenHeight / 2 + 200}
-                delay={0}
+                y={screenHeight / 2 - 200}
+                delay={1500}
                 deal={deal}
-                image={Image1}
-                text={<Stack />}
+                image={Image4}
+                text={<Contact />}
               />
+              <Card
+                title={"Projects"}
+                index={2}
+                degs={"-5deg"}
+                rotate={360}
+                x={
+                  screenWidth > 450
+                    ? screenWidth / 2 - 150
+                    : screenWidth / 2 - 80
+                }
+                y={screenHeight / 2 - 200}
+                delay={1000}
+                deal={deal}
+                image={Image3}
+              />
+
               <Card
                 // ref={cardRef}
                 title={"About"}
@@ -73,35 +89,20 @@ function App() {
                 text={<Journey />}
               />
               <Card
-                title={"Projects"}
-                index={2}
-                degs={"-5deg"}
-                rotate={360}
-                x={
-                  screenWidth > 450
-                    ? screenWidth / 2 - 150
-                    : screenWidth / 2 - 80
-                }
-                y={screenHeight / 2 - 200}
-                delay={1000}
-                deal={deal}
-                image={Image3}
-              />
-              <Card
-                title={"Contact"}
-                index={1}
-                degs={"0deg"}
+                title={"Stack"}
+                index={4}
+                degs={"-7deg"}
                 rotate={360}
                 x={
                   screenWidth > 450
                     ? -screenWidth / 2 + 150
                     : -screenWidth / 2 + 80
                 }
-                y={screenHeight / 2 - 200}
-                delay={1500}
+                y={-screenHeight / 2 + 200}
+                delay={0}
                 deal={deal}
-                image={Image4}
-                text={<Contact />}
+                image={Image1}
+                text={<Stack />}
               />
 
               <a.button

@@ -1,3 +1,5 @@
+@use "../../Partials/breakpoints" as *;
+
 .stack {
     
     display: flex;
@@ -7,8 +9,9 @@
     height: 100%;
 
     &__container {
-        width: 100%;
+        min-width: 50%;
         height: 100%;
+        min-height: 70%;
         // max-width: ;
         display:flex;
         align-items: center;
@@ -18,9 +21,9 @@
     }
     
     &__images {
-    height: 30%;
-    min-height: 30%;
     max-height: 30%;
+    max-width: 70%;
+    height: auto;
     width: auto;
     margin:0 5rem;
 
@@ -29,4 +32,8 @@
         color: blue;
     }
 }   
+
+@include mobile {
+    flex-direction: column;
+}
 }

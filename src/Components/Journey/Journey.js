@@ -4,6 +4,13 @@ import { useSprings, animated as a, useTransition } from "react-spring";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import "./Journey.scss";
 import Signpost from "../../Assets/Images/signpost.png";
+import Brainstation from "../../Assets/Images/brainstation.png";
+import Programmer from "../../Assets/Images/programmer.png";
+import Programming from "../../Assets/Images/programming.png";
+import Challenge from "../../Assets/Images/challenge.png";
+import Three from "../../Assets/Images/three.png";
+import Typescript from "../../Assets/Images/Typescript.png";
+import Redux from "../../Assets/Images/Redux.png";
 
 // const data = [
 //   {
@@ -79,7 +86,7 @@ function Journey(props) {
       </div>
       <div className="journey__section">
         <div className="journey__left-images">
-          <img className="journey__sign" src={Signpost} alt="fork" />
+          <img className="journey__sign" src={Programmer} alt="fork" />
         </div>
         <div className="journey__right-content">
           <p className="journey__text">
@@ -98,12 +105,12 @@ function Journey(props) {
           </p>
         </div>
         <div className="journey__right-images">
-          <img className="journey__sign" src={Signpost} alt="fork" />
+          <img className="journey__sign" src={Programming} alt="fork" />
         </div>
       </div>
       <div className="journey__section">
         <div className="journey__left-images">
-          <img className="journey__sign" src={Signpost} alt="fork" />
+          <img className="journey__sign" src={Brainstation} alt="fork" />
         </div>
         <div className="journey__right-content">
           <p className="journey__text">
@@ -128,15 +135,17 @@ function Journey(props) {
           </p>
         </div>
         <div className="journey__right-images">
-          <img className="journey__sign" src={Signpost} alt="fork" />
+          <img className="journey__sign" src={Challenge} alt="fork" />
         </div>
       </div>
       <div className="journey__section--column">
-        <div className="journey__left">
-          <p className="journey__text">So what are my next steps?</p>
+        <div className="journey__center">
+          <h4 className="journey__text-steps">So what are my next steps?</h4>
         </div>
         <div className="journey__bottom-images">
-          <img className="journey__sign" src={Signpost} alt="fork" />
+          <img className="journey__img-bottom" src={Redux} alt="fork" />
+          <img className="journey__img-bottom" src={Typescript} alt="fork" />
+          <img className="journey__img-bottom" src={Three} alt="fork" />
         </div>
       </div>
     </div>

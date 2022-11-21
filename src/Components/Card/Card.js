@@ -17,7 +17,7 @@ const trans = (x, y, s) =>
 function Card(props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [style, setStyle] = useState({});
-  const [hovered, setHovered] = useState(false);
+  // const [hovered, setHovered] = useState(false);
 
   const { screenWidth, screenHeight } = useWindowDimensions();
 
@@ -37,6 +37,8 @@ function Card(props) {
     x: props.deal ? props.x : 0,
     y: props.deal ? props.y : 0,
     delay: props.deal ? props.delay : 0,
+    width: screenWidth < 450 ? 120 : 150,
+    height: screenWidth < 450 ? 180 : 221,
   });
 
   const deal = props.deal;
@@ -96,14 +98,21 @@ function Card(props) {
             x: isFlipped ? 0 : props.x,
             y: isFlipped ? 0 : props.y,
             rotateZ: isFlipped ? 360 : 0,
-
+            zIndex: isFlipped ? 1000 : props.index,
             config: config.molasses,
           },
         ],
   });
 
   const flipText = useSpring({
-    transform: `perspective(500px) rotateY(${isFlipped ? 0 : 180}deg)`,
+    to: [
+      {
+        display: "none",
+        transform: `perspective(500px) rotateY(${isFlipped ? 0 : 180}deg)`,
+        config: config.molasses,
+      },
+      { display: "flex" },
+    ],
   });
 
   const handleCards = () => {
@@ -125,8 +134,9 @@ function Card(props) {
       className="card"
       style={{
         ...style,
-        // width: screenWidth < 450 ? screenWidth / 4 : 150,
-        // height: screenWidth < 450 ? ((screenWidth / 4) * 22) / 15 : 220,
+        backgroundSize: "cover",
+        // width: screenWidth < 450 ? 120 : 150,
+        // height: screenWidth < 450 ? 180 : 221,
 
         rotate: deal ? 0 : props.degs,
         backgroundColor: isFlipped ? "#faf7e6" : "none",
@@ -136,11 +146,11 @@ function Card(props) {
       onClick={handleCards}
       onMouseMove={({ clientX: x, clientY: y }) => {
         set.start({ xys: calc(x, y) });
-        setHovered(true);
+        // setHovered(true);
       }}
       onMouseLeave={() => {
         set.start({ xys: [0, 0, 1] });
-        setHovered(false);
+        // setHovered(false);
       }}
     >
       {isFlipped ? (
