@@ -20,6 +20,15 @@ function Card(props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [style, setStyle] = useState({});
   // const [hovered, setHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); //initiate as false
+  // device detection
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    setIsMobile(true);
+  }
 
   const { screenWidth, screenHeight } = useWindowDimensions();
 
@@ -149,7 +158,7 @@ function Card(props) {
         rotate: deal ? 0 : props.degs,
         backgroundColor: isFlipped ? "#faf7e6" : "none",
         backgroundImage: isFlipped ? "none" : `url(${props.image})`,
-        transform: morph.xys.to(trans),
+        transform: isMobile ? null : morph.xys.to(trans),
       }}
       onClick={handleCards}
       onMouseMove={({ clientX: x, clientY: y }) => {
