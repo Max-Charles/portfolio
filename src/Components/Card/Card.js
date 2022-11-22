@@ -22,13 +22,6 @@ function Card(props) {
   // const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false); //initiate as false
   // device detection
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    setIsMobile(true);
-  }
 
   const { screenWidth, screenHeight } = useWindowDimensions();
 
@@ -61,6 +54,14 @@ function Card(props) {
         setStyle({ ...dealCards });
         setInitialRender(false);
       }
+    }
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      setIsMobile(true);
     }
   }, [deal, dealCards, initialRender]);
 
