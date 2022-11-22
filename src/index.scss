@@ -65,35 +65,35 @@ a {
  @include mobile {
 
   h1 {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 0.5px;
 
     }
   
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 0.5px;
 
     }
   
     h3 {
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: 500;
       letter-spacing: 0.5px;
 
     }
   
     h4 {
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       font-weight: 400;
       letter-spacing: 0.5px;
 
     }
   
     p, ul, li {
-      font-size: 0.6rem;
+      font-size: 0.4rem;
     }
  }
 
