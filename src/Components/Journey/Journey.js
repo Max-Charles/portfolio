@@ -1,7 +1,7 @@
 import React from "react";
-import { useState } from "react";
-import { useSprings, animated as a, useTransition } from "react-spring";
-import useWindowDimensions from "../../Hooks/useWindowDimensions";
+// import { useState } from "react";
+// import { useTransition } from "react-spring";
+// import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import "./Journey.scss";
 import Signpost from "../../Assets/Images/signpost.png";
 import Brainstation from "../../Assets/Images/brainstation.png";
@@ -30,26 +30,26 @@ import Redux from "../../Assets/Images/Redux.png";
 // ];
 
 function Journey(props) {
-  const isFlipped = props.isFlipped;
-  const setIsFlipped = props.setIsFlipped;
-  const { screenWidth, screenHeight } = useWindowDimensions();
+  // const isFlipped = props.isFlipped;
+  // const setIsFlipped = props.setIsFlipped;
+  // const { screenWidth } = useWindowDimensions();
 
-  const [slide, setSlide] = useState(false);
-  const transition = useTransition(slide, {
-    from: { x: -screenWidth },
-    enter: { x: 0 },
-    leave: { x: screenWidth },
-  });
+  // const [slide, setSlide] = useState(false);
+  // const transition = useTransition(slide, {
+  //   from: { x: -screenWidth },
+  //   enter: { x: 0 },
+  //   leave: { x: screenWidth },
+  // });
 
   // const spring = useSprings(
   //   data.length,
   //   data.map(({ ...from }) => from)
   // );
 
-  const handlePropogation = (e) => {
-    e.stopPropagation();
-    setSlide(!slide);
-  };
+  // const handlePropogation = (e) => {
+  //   e.stopPropagation();
+  //   setSlide(!slide);
+  // };
 
   return (
     <div className="journey">

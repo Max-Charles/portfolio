@@ -44,19 +44,39 @@ function Projects() {
         <div className="projects__carousel" onClick={handlePropogation}>
           <Carousel {...carouselProps}>
             <div>
-              <img className="projects__slide-image" src={JewelleryOne} />
+              <img
+                className="projects__slide-image"
+                src={JewelleryOne}
+                alt="slide-img"
+              />
             </div>
             <div>
-              <img className="projects__slide-image" src={JewelleryTwo} />
+              <img
+                className="projects__slide-image"
+                src={JewelleryTwo}
+                alt="slide-img"
+              />
             </div>
             <div>
-              <img className="projects__slide-image" src={JewelleryThree} />
+              <img
+                className="projects__slide-image"
+                src={JewelleryThree}
+                alt="slide-img"
+              />
             </div>
             <div>
-              <img className="projects__slide-image" src={JewelleryFour} />
+              <img
+                className="projects__slide-image"
+                src={JewelleryFour}
+                alt="slide-img"
+              />
             </div>
             <div>
-              <img className="projects__slide-image" src={JewelleryFive} />
+              <img
+                className="projects__slide-image"
+                src={JewelleryFive}
+                alt="slide-img"
+              />
             </div>
           </Carousel>
         </div>
