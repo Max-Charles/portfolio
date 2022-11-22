@@ -33,7 +33,10 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ maxHeight: screenHeight, maxWidth: screenWidth }}
+    >
       <div className="card-container">
         {/* <h2>Max's Poker Room</h2> */}
         <div className="card-container__inner">
