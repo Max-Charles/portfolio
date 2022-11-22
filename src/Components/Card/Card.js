@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Journey from "../Journey/Journey";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import Stack from "../Stack/Stack";
+import Projects from "../Projects/Projects";
 
 const calc = (x, y) => [
   (y - window.innerHeight / 2) / 50,
@@ -126,6 +127,9 @@ function Card(props) {
     }
     if (input === "Stack") {
       return <Stack isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
+    }
+    if (input === "Projects") {
+      return <Projects isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
     }
   };
 
