@@ -6,6 +6,7 @@ import Journey from "../Journey/Journey";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import Stack from "../Stack/Stack";
 import Projects from "../Projects/Projects";
+import Contact from "../Contact/Contact";
 
 const calc = (x, y) => [
   (y - window.innerHeight / 2) / 50,
@@ -130,6 +131,9 @@ function Card(props) {
     }
     if (input === "Projects") {
       return <Projects isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
+    }
+    if (input === "Contact") {
+      return <Contact />;
     }
   };
 
