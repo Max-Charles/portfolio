@@ -19,9 +19,7 @@ const trans = (x, y, s) =>
 function Card(props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [style, setStyle] = useState({});
-  // const [hovered, setHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); //initiate as false
-  // device detection
+  const [isMobile, setIsMobile] = useState(false);
 
   const { screenWidth, screenHeight } = useWindowDimensions();
 
@@ -134,13 +132,13 @@ function Card(props) {
 
   const renderChild = (input) => {
     if (input === "About") {
-      return <Journey isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
+      return <Journey />;
     }
     if (input === "Stack") {
-      return <Stack isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
+      return <Stack />;
     }
     if (input === "Projects") {
-      return <Projects isFlipped={isFlipped} setIsFlipped={setIsFlipped} />;
+      return <Projects />;
     }
     if (input === "Contact") {
       return <Contact />;
@@ -153,8 +151,6 @@ function Card(props) {
       style={{
         ...style,
         backgroundSize: "cover",
-        // width: screenWidth < 450 ? 120 : 150,
-        // height: screenWidth < 450 ? 180 : 221,
 
         rotate: deal ? 0 : props.degs,
         backgroundColor: isFlipped ? "#faf7e6" : "none",
@@ -164,11 +160,9 @@ function Card(props) {
       onClick={handleCards}
       onMouseMove={({ clientX: x, clientY: y }) => {
         set.start({ xys: calc(x, y) });
-        // setHovered(true);
       }}
       onMouseLeave={() => {
         set.start({ xys: [0, 0, 1] });
-        // setHovered(false);
       }}
     >
       {isFlipped ? (

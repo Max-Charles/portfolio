@@ -59,6 +59,10 @@
             }
     }
 
+    &__links {
+        max-width: 95%;
+    }
+
     &__link {
         display: flex;
         align-items: center;

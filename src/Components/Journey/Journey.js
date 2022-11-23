@@ -4,7 +4,9 @@ import React from "react";
 // import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import "./Journey.scss";
 import Signpost from "../../Assets/Images/signpost.png";
+import BetaCalco from "../../Assets/Images/betacalco.jpeg";
 import Brainstation from "../../Assets/Images/brainstation.png";
+import Growth from "../../Assets/Images/growth.png";
 import Programmer from "../../Assets/Images/programmer.png";
 import Programming from "../../Assets/Images/programming.png";
 import Challenge from "../../Assets/Images/challenge.png";
@@ -30,41 +32,8 @@ import Redux from "../../Assets/Images/Redux.png";
 // ];
 
 function Journey(props) {
-  // const isFlipped = props.isFlipped;
-  // const setIsFlipped = props.setIsFlipped;
-  // const { screenWidth } = useWindowDimensions();
-
-  // const [slide, setSlide] = useState(false);
-  // const transition = useTransition(slide, {
-  //   from: { x: -screenWidth },
-  //   enter: { x: 0 },
-  //   leave: { x: screenWidth },
-  // });
-
-  // const spring = useSprings(
-  //   data.length,
-  //   data.map(({ ...from }) => from)
-  // );
-
-  // const handlePropogation = (e) => {
-  //   e.stopPropagation();
-  //   setSlide(!slide);
-  // };
-
   return (
     <div className="journey">
-      {/* {isFlipped
-        ? spring.map((spring, index) => (
-            <a.div
-              className="journey__section"
-              key={data[index].id}
-              style={{ ...spring }}
-            >
-              {data[index].text}
-            </a.div>
-          ))
-        : null} */}
-
       <div className="journey__section">
         <div className="journey__left-content">
           <p className="journey__text">
@@ -76,8 +45,8 @@ function Journey(props) {
             sucessful.
           </p>
           <p className="journey__text">
-            I then founded my first Tech Startup, working on a food based social
-            media application. This was less successful. But I learnt a lot!
+            I then founded a Tech Startup, working on a food based social media
+            application. This ultimatly failed, but I learnt a lot!
           </p>
         </div>
         <div className="journey__right-images">
@@ -106,6 +75,29 @@ function Journey(props) {
         </div>
         <div className="journey__right-images">
           <img className="journey__sign" src={Programming} alt="fork" />
+        </div>
+      </div>
+      <div className="journey__section">
+        <div className="journey__left-images">
+          <img className="journey__sign" src={BetaCalco} alt="fork" />
+        </div>
+        <div className="journey__right-content">
+          <p className="journey__text">
+            From this I landed my first job at Beta Calco, starting initially as
+            a front end developer.
+          </p>
+        </div>
+      </div>
+      <div className="journey__section">
+        <div className="journey__left-content">
+          <p className="journey__text">My passion for coding grew.</p>
+          <p className="journey__text">
+            I wanted to learn more and diversify my stack. I knew that if I
+            wanted to be a great dev I would need to learn backend frameworks.
+          </p>
+        </div>
+        <div className="journey__right-images">
+          <img className="journey__sign" src={Growth} alt="fork" />
         </div>
       </div>
       <div className="journey__section">

@@ -39,23 +39,23 @@ function Contact() {
         roles please get in touch.
       </p>
       <div className="contact__links">
-        <a href="tel:447949443603">
-          <div className="contact__link" onClick={(e) => e.stopPropagation()}>
+        <div className="contact__link" onClick={(e) => e.stopPropagation()}>
+          <a href="tel:447949443603">
             <img className="contact__link-icon" src={Phone} alt="mobile" />
-            <p className="contact__link-title">Mobile: +44 7949443603</p>
-          </div>
-        </a>
-        <a href="mailto:maxcharlesuk@gmail.com">
-          <div className="contact__link" onClick={(e) => e.stopPropagation()}>
+          </a>
+          <p className="contact__link-title">Mobile: +44 7949443603</p>
+        </div>
+        <div className="contact__link" onClick={(e) => e.stopPropagation()}>
+          <a href="mailto:maxcharlesuk@gmail.com">
             <img
               className="contact__link-icon"
               src={Mail}
               alt="email"
               onClick={(e) => e.stopPropagation()}
             />
-            <p className="contact__link-title">Email: maxcharlesuk@gmail.com</p>
-          </div>
-        </a>
+          </a>
+          <p className="contact__link-title">Email: maxcharlesuk@gmail.com</p>
+        </div>
         <div className="contact__quick-link">
           <a
             href="https://www.linkedin.com/in/max-charles1/"
