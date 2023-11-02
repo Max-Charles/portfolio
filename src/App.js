@@ -32,6 +32,27 @@ function App() {
     onRest: () => setFlip(!flip),
   });
 
+  const titleAnimation = useSpring({
+    delay: 3200,
+    // mass: 5,
+    // friction: 120,
+    // tension: 120,
+    from: { opacity: 0, scale: 0.5, color: "black" },
+    to: [{ opacity: 1, scale: 1.5 }, { color: "#faf7e6" }],
+
+    config: config.wobbly,
+  });
+
+  const subTitleAnimation = useSpring({
+    delay: 4500,
+    // tension: 200,
+    // friction: 20,
+    // loop: 5000,
+    from: { opacity: 0, scale: 0.5, color: "black" },
+    to: [{ opacity: 1, scale: 1.8 }, { color: "#faf7e6" }],
+    config: config.wobbly,
+  });
+
   return (
     <div
       className="App"
@@ -42,6 +63,26 @@ function App() {
         <div className="card-container__inner">
           <div className="card-container__inner-inner">
             <div className="card-container__inner-inner-inner">
+              {deal ? (
+                <>
+                  <a.h2 style={{ ...titleAnimation }}>Pick a card,</a.h2>
+                  <a.h3 style={{ ...subTitleAnimation, marginTop: "3rem" }}>
+                    any card...
+                  </a.h3>
+                </>
+              ) : (
+                <h1
+                  style={{
+                    textAlign: "center",
+                    top: "200px",
+                    backgroundColor: "#faf7e6",
+                    padding: "3px 10px ",
+                  }}
+                >
+                  Welcome to Max's Poker Room
+                </h1>
+              )}
+
               <Card
                 title={"Contact"}
                 index={1}
@@ -108,16 +149,19 @@ function App() {
                 text={<Stack />}
               />
 
-              <a.button
-                className="deal-button"
-                onClick={handleClick}
-                style={{
-                  ...buttonAnimation,
-                  display: deal ? "none" : "display",
-                }}
-              >
-                Deal The Deck
-              </a.button>
+              {deal ? (
+                <></>
+              ) : (
+                <a.button
+                  className="deal-button"
+                  onClick={handleClick}
+                  style={{
+                    ...buttonAnimation,
+                  }}
+                >
+                  Deal The Deck
+                </a.button>
+              )}
             </div>
           </div>
         </div>

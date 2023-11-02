@@ -7,6 +7,7 @@ import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import Stack from "../Stack/Stack";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
+import CloseIcon from "@mui/icons-material/Close";
 
 const calc = (x, y) => [
   (y - window.innerHeight / 2) / 50,
@@ -155,7 +156,7 @@ function Card(props) {
         rotate: deal ? 0 : props.degs,
         backgroundColor: isFlipped ? "#faf7e6" : "none",
         backgroundImage: isFlipped ? "none" : `url(${props.image})`,
-        transform: isMobile ? null : morph.xys.to(trans),
+        transform: isMobile || isFlipped ? null : morph.xys.to(trans),
       }}
       onClick={handleCards}
       onMouseMove={({ clientX: x, clientY: y }) => {
@@ -165,6 +166,15 @@ function Card(props) {
         set.start({ xys: [0, 0, 1] });
       }}
     >
+      {isFlipped && (
+        <a.div
+          className="card__button"
+          style={{ ...flipText }}
+          onClick={handleCards}
+        >
+          <CloseIcon style={{ cursor: "pointer" }} />
+        </a.div>
+      )}
       {isFlipped ? (
         <a.div className="card__inner" style={{ ...flipText }}>
           {renderChild(props.title)}

@@ -27,73 +27,88 @@ a {
   text-decoration: none;
 }
 
- h1 {
-   font-size: 2rem;
-   font-weight: 900;
-   letter-spacing: 0.5px;
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
 
- }
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
 
- h2 {
-   font-size: 2rem;
-   font-weight: 700;
-   letter-spacing: 0.5px;
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
- }
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
 
- h3 {
-   font-size: 1.6rem;
-   font-weight: 600;
-   letter-spacing: 0.5px;
+p,
+ul,
+li {
+  font-size: 1rem;
 
- }
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
 
- h4 {
-   font-size: 1.4rem;
-   font-weight: 500;
-   letter-spacing: 0.5px;
+div {
+  // Custom scrollbar styles
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+    background-color: transparent; // Transparent background
+  }
 
- }
+  &::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 2px; // To make the thumb rounded
+    // margin: 10px;
+  }
 
- p, ul, li {
-   font-size: 1rem;
+  &::-webkit-scrollbar-track {
+    // Use padding to effectively reduce the thumb's height
+    background-color: transparent; // Keeps the track background transparent
+    padding: 5% 0; // Pad the top and bottom of the track to achieve 95% height
+  }
+}
 
-   letter-spacing: 0.5px;
-   font-weight: 400;
- }
-
- @include mobile {
-
+@include mobile {
   h1 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
 
-    }
-  
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
 
-    }
-  
-    h3 {
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+  h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
 
-    }
-  
-    h4 {
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
+  h4 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
 
-    }
-  
-    p, ul, li {
-      font-size: 0.4rem;
-    }
- }
-
+  p,
+  ul,
+  li {
+    font-size: 0.4rem;
+  }
+}
